@@ -1,18 +1,22 @@
 import * as types from '../actions/ActionTypes';
 
 const initialState = {
-    color: 'black'
+    number: 0
 };
 
-const color = (state = initialState, action) => {
+const number = (state = initialState, action) => {
     switch(action.type) {
-        case types.SET_COLOR:
+        case types.INCREMENT: 
             return {
-                color: action.color
+                number: state.number + 1
+            };
+        case types.DECREMENT:
+            return {
+                number: state.number - 1
             };
         default:
             return state;
     }
 }
 
-export default color;
+export default number;
